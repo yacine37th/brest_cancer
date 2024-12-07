@@ -63,11 +63,20 @@
 import streamlit as st
 import numpy as np
 import pickle
+import joblib
+
 
 # Load models and scaler
-logistic_model = pickle.load(open('lr_model.pkl', 'rb'))
-rf_model = pickle.load(open('rf_model.pkl', 'rb'))
-scaler = pickle.load(open('scal.pkl', 'rb'))
+logistic_model = joblib.load('lr_model.pkl')
+
+# pickle.load(open('lr_model.pkl', 'rb'))
+
+rf_model =joblib.load('rf_model.pkl')
+
+
+# pickle.load(open('rf_model.pkl', 'rb'))
+scaler = joblib.load('scal.pkl')
+# pickle.load(open('scal.pkl', 'rb'))
 
 # Title
 st.title("Breast Cancer Prediction App")
